@@ -2,8 +2,9 @@ pipeline {
     agent any
     tools{
     maven 'MVN'
-    docker 'DOCKER'}
+    dockerTool 'DOCKER'}
      environment {
+            PATH = "/usr/local/bin:${env.PATH}"
             // Define Docker Hub credentials ID
             DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
             // Define Docker Hub repository name
