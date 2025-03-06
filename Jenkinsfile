@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools{
     maven 'MVN'
-    docker 'DOCKER'}
+    dockerTool 'DOCKER'}
      environment {
             // Define Docker Hub credentials ID
             DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
