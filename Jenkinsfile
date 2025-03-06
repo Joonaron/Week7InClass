@@ -1,12 +1,14 @@
 pipeline {
     agent any
+    tools{
+    maven 'MVN'}
      environment {
             // Define Docker Hub credentials ID
-            DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
+            DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
             // Define Docker Hub repository name
-            DOCKERHUB_REPO = 'amirdirin/week7_inclass_test1'
+            DOCKERHUB_REPO = 'joonaron/inclassweek7'
             // Define Docker image tag
-            DOCKER_IMAGE_TAG = 'latest_v1'
+            DOCKER_IMAGE_TAG = 'latest'
         }
     stages {
         stage('Checkout') {
