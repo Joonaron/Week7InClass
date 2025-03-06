@@ -4,7 +4,7 @@ pipeline {
     maven 'MVN'
     dockerTool 'DOCKER'}
      environment {
-            PATH = "/usr/local/bin:${env.PATH}"
+
             // Define Docker Hub credentials ID
             DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
             // Define Docker Hub repository name
@@ -48,6 +48,7 @@ pipeline {
                     steps {
                         // Build Docker image
                         script {
+                            sh 'docker context use default'
                             docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                         }
                     }
